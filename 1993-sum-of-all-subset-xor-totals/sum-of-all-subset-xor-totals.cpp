@@ -24,10 +24,19 @@ public:
     }
 
     int subsetXORSum(vector<int>& nums) {
-        // lets do it with recursion
+        // lets do it with power set
         int ans=0;
-        vector<int> temp;
-        ans = subsets(0,nums,temp);
+        int n=nums.size();
+       for(int i=0;i<(1<<n);i++){
+      int  xor_result=0;
+        for(int j=0;j<n;j++){
+            if (i & (1 << j)) { 
+                xor_result ^= nums[j]; 
+            }
+        }
+        ans += xor_result;
+        
+       }
         return ans;
     }
 };

@@ -9,9 +9,10 @@ public:
         for(int i=0;i<n;i++){
             if(s[i] == '1'){
                 ans++;
-                an=(an+ ans)%M;
+                //an=(an+ ans)%M;
                 }
-            if(s[i] != '1'){
+            if(s[i] != '1' || i == n-1){
+                an= an+ (ans*(ans+1)/2)%M;
                 ans=0;
             }
         }

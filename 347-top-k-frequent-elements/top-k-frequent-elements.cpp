@@ -9,7 +9,7 @@ public:
         for (auto &p : freq) v.emplace_back(p.first, p.second);
 
         sort(v.begin(), v.end(),
-             [](const auto &a, const auto &b){ return a.second > b.second; });
+             [&](const auto &a, const auto &b){ return a.second > b.second; });
 
         vector<int> ans;
         ans.reserve(k);

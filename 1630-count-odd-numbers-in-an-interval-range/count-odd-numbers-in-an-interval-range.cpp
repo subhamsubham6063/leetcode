@@ -5,6 +5,6 @@ public:
         // for(int i=low;i<=high;i++){
         //     ans+= (i&1);
         // }
-        return (high + 1) / 2  -  (low / 2);
+        return ((high + 1) >> 1)  -  (low >> 1);
     }
 };
